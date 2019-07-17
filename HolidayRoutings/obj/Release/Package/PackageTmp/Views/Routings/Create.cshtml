@@ -1,0 +1,57 @@
+﻿@model HolidayRoutings.Models.vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING
+
+@{
+    ViewBag.Title = "Criar Routing";
+}
+
+<h2>Novo Routing</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">    
+    <div class="p-3 mb-2 bg-dark text-white">
+        <h4>[@(ViewBag.user_name)]</h4>
+    </div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group" style="display: none;">
+        @Html.LabelFor(model => model.user_id, "Colaborador", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("user_id", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.user_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.person_in_charge_id, "Responsável", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("person_in_charge_id", null, "-- Seleccionar Responsável --", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.person_in_charge_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="mandatory" class="control-label col-md-2">Obrigatório</label>
+        <div class="col-md-10">
+            @Html.DropDownList("mandatory", new SelectList(ViewBag.mandatory, "Value", "Text"), new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Gravar" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Details", "Users", new { id = ViewBag.id }, null)
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

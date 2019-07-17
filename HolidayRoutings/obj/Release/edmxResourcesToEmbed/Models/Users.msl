@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="vdlwebcontrolModelStoreContainer" CdmEntityContainer="vdlwebcontrolEntities3">
+    <EntitySetMapping Name="t__users">
+      <EntityTypeMapping TypeName="vdlwebcontrolModel.t__users">
+        <MappingFragment StoreEntitySet="t__users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_logon" ColumnName="user_logon" />
+          <ScalarProperty Name="user_pass" ColumnName="user_pass" />
+          <ScalarProperty Name="user_pass_temp" ColumnName="user_pass_temp" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_alias" ColumnName="user_alias" />
+          <ScalarProperty Name="user_alias_pt" ColumnName="user_alias_pt" />
+          <ScalarProperty Name="user_alias_en" ColumnName="user_alias_en" />
+          <ScalarProperty Name="user_alias_de" ColumnName="user_alias_de" />
+          <ScalarProperty Name="user_title_pt" ColumnName="user_title_pt" />
+          <ScalarProperty Name="user_title_en" ColumnName="user_title_en" />
+          <ScalarProperty Name="user_title_de" ColumnName="user_title_de" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="user_pc_name" ColumnName="user_pc_name" />
+          <ScalarProperty Name="user_phone_ext" ColumnName="user_phone_ext" />
+          <ScalarProperty Name="user_phone_1" ColumnName="user_phone_1" />
+          <ScalarProperty Name="user_phone_2" ColumnName="user_phone_2" />
+          <ScalarProperty Name="user_phone_3" ColumnName="user_phone_3" />
+          <ScalarProperty Name="user_phone_4" ColumnName="user_phone_4" />
+          <ScalarProperty Name="user_phone_5" ColumnName="user_phone_5" />
+          <ScalarProperty Name="user_lang" ColumnName="user_lang" />
+          <ScalarProperty Name="user_gender" ColumnName="user_gender" />
+          <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+          <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+          <ScalarProperty Name="toner_requests" ColumnName="toner_requests" />
+          <ScalarProperty Name="valor_hora" ColumnName="valor_hora" />
+          <ScalarProperty Name="valor_hora_custo" ColumnName="valor_hora_custo" />
+          <ScalarProperty Name="pcs_enabled" ColumnName="pcs_enabled" />
+          <ScalarProperty Name="pcs_user_level" ColumnName="pcs_user_level" />
+          <ScalarProperty Name="pcs_results_per_page" ColumnName="pcs_results_per_page" />
+          <ScalarProperty Name="hbc_enabled" ColumnName="hbc_enabled" />
+          <ScalarProperty Name="hbc_user_id" ColumnName="hbc_user_id" />
+          <ScalarProperty Name="hbc_user_level" ColumnName="hbc_user_level" />
+          <ScalarProperty Name="hbc_routing" ColumnName="hbc_routing" />
+          <ScalarProperty Name="hbc_check_users" ColumnName="hbc_check_users" />
+          <ScalarProperty Name="hbc_results_per_page" ColumnName="hbc_results_per_page" />
+          <ScalarProperty Name="mas_enabled" ColumnName="mas_enabled" />
+          <ScalarProperty Name="mas_user_level" ColumnName="mas_user_level" />
+          <ScalarProperty Name="mas_results_per_page" ColumnName="mas_results_per_page" />
+          <ScalarProperty Name="dil_enabled" ColumnName="dil_enabled" />
+          <ScalarProperty Name="dil_user_level" ColumnName="dil_user_level" />
+          <ScalarProperty Name="dil_results_per_page" ColumnName="dil_results_per_page" />
+          <ScalarProperty Name="dil_language" ColumnName="dil_language" />
+          <ScalarProperty Name="dil_permissions" ColumnName="dil_permissions" />
+          <ScalarProperty Name="wcm_enabled" ColumnName="wcm_enabled" />
+          <ScalarProperty Name="wcm_user_level" ColumnName="wcm_user_level" />
+          <ScalarProperty Name="wcm_results_per_page" ColumnName="wcm_results_per_page" />
+          <ScalarProperty Name="wcm_editable_pages" ColumnName="wcm_editable_pages" />
+          <ScalarProperty Name="vcs_enabled" ColumnName="vcs_enabled" />
+          <ScalarProperty Name="vcs_user_level" ColumnName="vcs_user_level" />
+          <ScalarProperty Name="vcs_results_per_page" ColumnName="vcs_results_per_page" />
+          <ScalarProperty Name="tas_enabled" ColumnName="tas_enabled" />
+          <ScalarProperty Name="tas_user_level" ColumnName="tas_user_level" />
+          <ScalarProperty Name="tas_results_per_page" ColumnName="tas_results_per_page" />
+          <ScalarProperty Name="oe_enabled" ColumnName="oe_enabled" />
+          <ScalarProperty Name="ir_oe_user_level" ColumnName="ir_oe_user_level" />
+          <ScalarProperty Name="ir_oe_enabled" ColumnName="ir_oe_enabled" />
+          <ScalarProperty Name="ir_oe_results_per_page" ColumnName="ir_oe_results_per_page" />
+          <ScalarProperty Name="ppr_print" ColumnName="ppr_print" />
+          <ScalarProperty Name="ppr_level" ColumnName="ppr_level" />
+          <ScalarProperty Name="bdg_enabled" ColumnName="bdg_enabled" />
+          <ScalarProperty Name="bdg_user_level" ColumnName="bdg_user_level" />
+          <ScalarProperty Name="prop_enabled" ColumnName="prop_enabled" />
+          <ScalarProperty Name="pcr_enabled" ColumnName="pcr_enabled" />
+          <ScalarProperty Name="evc_dep_enabled" ColumnName="evc_dep_enabled" />
+          <ScalarProperty Name="gir_enabled" ColumnName="gir_enabled" />
+          <ScalarProperty Name="rhhe_comp_id" ColumnName="rhhe_comp_id" />
+          <ScalarProperty Name="rhhe_enabled" ColumnName="rhhe_enabled" />
+          <ScalarProperty Name="rhhe_user_id" ColumnName="rhhe_user_id" />
+          <ScalarProperty Name="isa_enabled" ColumnName="isa_enabled" />
+          <ScalarProperty Name="isa_user_level" ColumnName="isa_user_level" />
+          <ScalarProperty Name="isa_results_per_page" ColumnName="isa_results_per_page" />
+          <ScalarProperty Name="isa_language" ColumnName="isa_language" />
+          <ScalarProperty Name="ecf_enabled" ColumnName="ecf_enabled" />
+          <ScalarProperty Name="ecf_user_level" ColumnName="ecf_user_level" />
+          <ScalarProperty Name="ecf_commisions" ColumnName="ecf_commisions" />
+          <ScalarProperty Name="VendorNo" ColumnName="VendorNo" />
+          <ScalarProperty Name="villalist_enabled" ColumnName="villalist_enabled" />
+          <ScalarProperty Name="villalist_user_level" ColumnName="villalist_user_level" />
+          <ScalarProperty Name="rca_enabled" ColumnName="rca_enabled" />
+          <ScalarProperty Name="rca_user_level" ColumnName="rca_user_level" />
+          <ScalarProperty Name="rca_dep" ColumnName="rca_dep" />
+          <ScalarProperty Name="hsk_app_enabled" ColumnName="hsk_app_enabled" />
+          <ScalarProperty Name="hsk_app_user_level" ColumnName="hsk_app_user_level" />
+          <ScalarProperty Name="prs_enabled" ColumnName="prs_enabled" />
+          <ScalarProperty Name="prs_user_level" ColumnName="prs_user_level" />
+          <ScalarProperty Name="cms_enabled" ColumnName="cms_enabled" />
+          <ScalarProperty Name="cms_user_level" ColumnName="cms_user_level" />
+          <ScalarProperty Name="addressbook" ColumnName="addressbook" />
+          <ScalarProperty Name="login_date" ColumnName="login_date" />
+          <ScalarProperty Name="login_ip" ColumnName="login_ip" />
+          <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+          <ScalarProperty Name="insert_author" ColumnName="insert_author" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_author" ColumnName="update_author" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_holiday_routings">
+      <EntityTypeMapping TypeName="vdlwebcontrolModel.vw_holiday_routings">
+        <MappingFragment StoreEntitySet="vw_holiday_routings">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="person_in_charge_id" ColumnName="person_in_charge_id" />
+          <ScalarProperty Name="mandatory" ColumnName="mandatory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t__companies">
+      <EntityTypeMapping TypeName="vdlwebcontrolModel.t__companies">
+        <MappingFragment StoreEntitySet="t__companies">
+          <ScalarProperty Name="NAVComp" ColumnName="NAVComp" />
+          <ScalarProperty Name="Cod" ColumnName="Cod" />
+          <ScalarProperty Name="NIF" ColumnName="NIF" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="mas_enabled" ColumnName="mas_enabled" />
+          <ScalarProperty Name="hbc_form_enabled" ColumnName="hbc_form_enabled" />
+          <ScalarProperty Name="hbc_enabled" ColumnName="hbc_enabled" />
+          <ScalarProperty Name="das_enabled" ColumnName="das_enabled" />
+          <ScalarProperty Name="pcs_enabled" ColumnName="pcs_enabled" />
+          <ScalarProperty Name="queueNAV" ColumnName="queueNAV" />
+          <ScalarProperty Name="CompNAV" ColumnName="CompNAV" />
+          <ScalarProperty Name="CompPC" ColumnName="CompPC" />
+          <ScalarProperty Name="CompPHC" ColumnName="CompPHC" />
+          <ScalarProperty Name="CompDB" ColumnName="CompDB" />
+          <ScalarProperty Name="CompDescription" ColumnName="CompDescription" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t__departments">
+      <EntityTypeMapping TypeName="vdlwebcontrolModel.t__departments">
+        <MappingFragment StoreEntitySet="t__departments">
+          <ScalarProperty Name="ProductFilter" ColumnName="ProductFilter" />
+          <ScalarProperty Name="director_cc" ColumnName="director_cc" />
+          <ScalarProperty Name="director_id" ColumnName="director_id" />
+          <ScalarProperty Name="sort_order" ColumnName="sort_order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="update_author" ColumnName="update_author" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="insert_author" ColumnName="insert_author" />
+          <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+          <ScalarProperty Name="hbc_enabled" ColumnName="hbc_enabled" />
+          <ScalarProperty Name="das_enabled" ColumnName="das_enabled" />
+          <ScalarProperty Name="pcs_enabled" ColumnName="pcs_enabled" />
+          <ScalarProperty Name="department_de" ColumnName="department_de" />
+          <ScalarProperty Name="department_en" ColumnName="department_en" />
+          <ScalarProperty Name="department_pt" ColumnName="department_pt" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vl_HRC_HBC_ASSIGNED_HOLIDAYS">
+      <EntityTypeMapping TypeName="vdlwebcontrolModel.vl_HRC_HBC_ASSIGNED_HOLIDAYS">
+        <MappingFragment StoreEntitySet="vl_HRC_HBC_ASSIGNED_HOLIDAYS">
+          <ScalarProperty Name="first_year" ColumnName="first_year" />
+          <ScalarProperty Name="half_fridays" ColumnName="half_fridays" />
+          <ScalarProperty Name="weekends_allowed" ColumnName="weekends_allowed" />
+          <ScalarProperty Name="bonus_days" ColumnName="bonus_days" />
+          <ScalarProperty Name="total_days" ColumnName="total_days" />
+          <ScalarProperty Name="year_related" ColumnName="year_related" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING">
+      <EntityTypeMapping TypeName="vdlwebcontrolModel.vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING">
+        <MappingFragment StoreEntitySet="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="person_in_charge_id" ColumnName="person_in_charge_id" />
+          <ScalarProperty Name="mandatory" ColumnName="mandatory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

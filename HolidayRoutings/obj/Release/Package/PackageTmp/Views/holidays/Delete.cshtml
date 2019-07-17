@@ -1,0 +1,100 @@
+﻿@model HolidayRoutings.Models.vl_HRC_HBC_ASSIGNED_HOLIDAYS
+
+@{
+    ViewBag.Title = "Apagar Ano";
+}
+
+<h3>Apagar Ano?</h3>
+<div>    
+    <div class="p-3 mb-2 bg-dark text-white">
+        <h4>[@(ViewBag.user_name)]</h4>
+    </div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.year_related)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.year_related)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_days)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_days)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bonus_days)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bonus_days)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weekends_allowed)
+        </dt>
+
+        @if (Model.weekends_allowed == 0)
+        {
+            <dd>
+                Não
+            </dd>
+        }
+        else
+        {
+            <dd>
+                Sim
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.half_fridays)
+        </dt>
+
+        @if (Model.half_fridays == 0)
+        {
+            <dd>
+                Não
+            </dd>
+        }
+        else
+        {
+            <dd>
+                Sim
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.first_year)
+        </dt>
+
+        @if (Model.first_year == 0)
+        {
+            <dd>
+                Não
+            </dd>
+        }
+        else
+        {
+            <dd>
+                Sim
+            </dd>
+        }
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar", "Details", "Users", new { id = Model.id }, null)
+        </div>
+    }
+</div>

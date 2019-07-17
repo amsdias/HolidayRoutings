@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="vdlwebcontrolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="t__companies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompDB" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompPHC" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompPC" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompNAV" Type="nvarchar" MaxLength="100" />
+          <Property Name="queueNAV" Type="nvarchar" MaxLength="100" />
+          <Property Name="pcs_enabled" Type="int" />
+          <Property Name="das_enabled" Type="int" />
+          <Property Name="hbc_enabled" Type="int" />
+          <Property Name="hbc_form_enabled" Type="int" />
+          <Property Name="mas_enabled" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="NIF" Type="nvarchar" MaxLength="20" />
+          <Property Name="Cod" Type="nvarchar" MaxLength="10" />
+          <Property Name="NAVComp" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="t__departments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="department_pt" Type="nvarchar" MaxLength="50" />
+          <Property Name="department_en" Type="nvarchar" MaxLength="50" />
+          <Property Name="department_de" Type="nvarchar" MaxLength="50" />
+          <Property Name="pcs_enabled" Type="int" />
+          <Property Name="das_enabled" Type="int" />
+          <Property Name="hbc_enabled" Type="int" />
+          <Property Name="insert_date" Type="datetime" />
+          <Property Name="insert_author" Type="int" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="update_author" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="sort_order" Type="int" />
+          <Property Name="director_id" Type="int" />
+          <Property Name="director_cc" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductFilter" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="t__users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_logon" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_pass_temp" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_alias" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_alias_pt" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_alias_en" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_alias_de" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_title_pt" Type="nvarchar" MaxLength="100" />
+          <Property Name="user_title_en" Type="nvarchar" MaxLength="100" />
+          <Property Name="user_title_de" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_pc_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_phone_ext" Type="int" />
+          <Property Name="user_phone_1" Type="char" MaxLength="10" />
+          <Property Name="user_phone_2" Type="char" MaxLength="10" />
+          <Property Name="user_phone_3" Type="char" MaxLength="10" />
+          <Property Name="user_phone_4" Type="char" MaxLength="10" />
+          <Property Name="user_phone_5" Type="char" MaxLength="10" />
+          <Property Name="user_lang" Type="varchar" MaxLength="2" />
+          <Property Name="user_gender" Type="varchar" MaxLength="1" />
+          <Property Name="dep_id" Type="int" />
+          <Property Name="comp_id" Type="int" />
+          <Property Name="toner_requests" Type="int" />
+          <Property Name="valor_hora" Type="float" />
+          <Property Name="valor_hora_custo" Type="float" />
+          <Property Name="pcs_enabled" Type="int" />
+          <Property Name="pcs_user_level" Type="int" />
+          <Property Name="pcs_results_per_page" Type="int" />
+          <Property Name="hbc_enabled" Type="int" />
+          <Property Name="hbc_user_id" Type="int" />
+          <Property Name="hbc_user_level" Type="int" />
+          <Property Name="hbc_routing" Type="nvarchar" MaxLength="50" />
+          <Property Name="hbc_check_users" Type="nvarchar" MaxLength="50" />
+          <Property Name="hbc_results_per_page" Type="int" />
+          <Property Name="mas_enabled" Type="int" />
+          <Property Name="mas_user_level" Type="int" />
+          <Property Name="mas_results_per_page" Type="int" />
+          <Property Name="dil_enabled" Type="int" />
+          <Property Name="dil_user_level" Type="int" />
+          <Property Name="dil_results_per_page" Type="int" />
+          <Property Name="dil_language" Type="varchar" MaxLength="50" />
+          <Property Name="dil_permissions" Type="nvarchar" MaxLength="50" />
+          <Property Name="wcm_enabled" Type="int" />
+          <Property Name="wcm_user_level" Type="int" />
+          <Property Name="wcm_results_per_page" Type="int" />
+          <Property Name="wcm_editable_pages" Type="nvarchar" MaxLength="50" />
+          <Property Name="vcs_enabled" Type="int" />
+          <Property Name="vcs_user_level" Type="int" />
+          <Property Name="vcs_results_per_page" Type="int" />
+          <Property Name="tas_enabled" Type="int" />
+          <Property Name="tas_user_level" Type="int" />
+          <Property Name="tas_results_per_page" Type="int" />
+          <Property Name="oe_enabled" Type="int" />
+          <Property Name="ir_oe_user_level" Type="int" />
+          <Property Name="ir_oe_enabled" Type="int" />
+          <Property Name="ir_oe_results_per_page" Type="int" />
+          <Property Name="ppr_print" Type="int" />
+          <Property Name="ppr_level" Type="int" />
+          <Property Name="bdg_enabled" Type="int" />
+          <Property Name="bdg_user_level" Type="int" />
+          <Property Name="prop_enabled" Type="int" />
+          <Property Name="pcr_enabled" Type="int" />
+          <Property Name="evc_dep_enabled" Type="int" />
+          <Property Name="gir_enabled" Type="int" />
+          <Property Name="rhhe_comp_id" Type="int" />
+          <Property Name="rhhe_enabled" Type="int" />
+          <Property Name="rhhe_user_id" Type="int" />
+          <Property Name="isa_enabled" Type="int" />
+          <Property Name="isa_user_level" Type="int" />
+          <Property Name="isa_results_per_page" Type="int" />
+          <Property Name="isa_language" Type="varchar" MaxLength="50" />
+          <Property Name="ecf_enabled" Type="int" />
+          <Property Name="ecf_user_level" Type="int" />
+          <Property Name="ecf_commisions" Type="nvarchar" MaxLength="10" />
+          <Property Name="VendorNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="villalist_enabled" Type="int" />
+          <Property Name="villalist_user_level" Type="int" />
+          <Property Name="rca_enabled" Type="int" />
+          <Property Name="rca_user_level" Type="int" />
+          <Property Name="rca_dep" Type="nvarchar" MaxLength="20" />
+          <Property Name="hsk_app_enabled" Type="int" />
+          <Property Name="hsk_app_user_level" Type="int" />
+          <Property Name="prs_enabled" Type="int" />
+          <Property Name="prs_user_level" Type="int" />
+          <Property Name="cms_enabled" Type="int" />
+          <Property Name="cms_user_level" Type="int" />
+          <Property Name="addressbook" Type="int" />
+          <Property Name="login_date" Type="datetime" />
+          <Property Name="login_ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="insert_date" Type="datetime" />
+          <Property Name="insert_author" Type="nvarchar" MaxLength="50" />
+          <Property Name="update_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="update_author" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="vl_HRC_HBC_ASSIGNED_HOLIDAYS">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="year_related" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="year_related" Type="int" Nullable="false" />
+          <Property Name="total_days" Type="float" />
+          <Property Name="bonus_days" Type="float" />
+          <Property Name="weekends_allowed" Type="int" />
+          <Property Name="half_fridays" Type="int" />
+          <Property Name="first_year" Type="int" />
+        </EntityType>
+        <EntityType Name="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="person_in_charge_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="person_in_charge_id" Type="int" Nullable="false" />
+          <Property Name="mandatory" Type="int" />
+        </EntityType>
+        <EntityType Name="vw_holiday_routings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="person_in_charge_id" Type="int" />
+          <Property Name="mandatory" Type="int" />
+        </EntityType>
+        <Association Name="FK_vw_holiday_routings_t__users">
+          <End Role="t__users" Type="Self.t__users" Multiplicity="0..1" />
+          <End Role="vw_holiday_routings" Type="Self.vw_holiday_routings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="t__users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vw_holiday_routings">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vw_holiday_routings_t__users1">
+          <End Role="t__users" Type="Self.t__users" Multiplicity="0..1" />
+          <End Role="vw_holiday_routings" Type="Self.vw_holiday_routings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="t__users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vw_holiday_routings">
+              <PropertyRef Name="person_in_charge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="vdlwebcontrolModelStoreContainer">
+          <EntitySet Name="t__companies" EntityType="Self.t__companies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t__departments" EntityType="Self.t__departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t__users" EntityType="Self.t__users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vl_HRC_HBC_ASSIGNED_HOLIDAYS" EntityType="Self.vl_HRC_HBC_ASSIGNED_HOLIDAYS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_holiday_routings" EntityType="Self.vw_holiday_routings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING" EntityType="Self.vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_vw_holiday_routings_t__users" Association="Self.FK_vw_holiday_routings_t__users">
+            <End Role="t__users" EntitySet="t__users" />
+            <End Role="vw_holiday_routings" EntitySet="vw_holiday_routings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vw_holiday_routings_t__users1" Association="Self.FK_vw_holiday_routings_t__users1">
+            <End Role="t__users" EntitySet="t__users" />
+            <End Role="vw_holiday_routings" EntitySet="vw_holiday_routings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="vdlwebcontrolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="t__users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_logon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_pass_temp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_alias_pt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_alias_en" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_alias_de" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_title_pt" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="user_title_en" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="user_title_de" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_pc_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_phone_ext" Type="Int32" />
+          <Property Name="user_phone_1" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="user_phone_2" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="user_phone_3" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="user_phone_4" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="user_phone_5" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="user_lang" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="user_gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="dep_id" Type="Int32" />
+          <Property Name="comp_id" Type="Int32" />
+          <Property Name="toner_requests" Type="Int32" />
+          <Property Name="valor_hora" Type="Double" />
+          <Property Name="valor_hora_custo" Type="Double" />
+          <Property Name="pcs_enabled" Type="Int32" />
+          <Property Name="pcs_user_level" Type="Int32" />
+          <Property Name="pcs_results_per_page" Type="Int32" />
+          <Property Name="hbc_enabled" Type="Int32" />
+          <Property Name="hbc_user_id" Type="Int32" />
+          <Property Name="hbc_user_level" Type="Int32" />
+          <Property Name="hbc_routing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hbc_check_users" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hbc_results_per_page" Type="Int32" />
+          <Property Name="mas_enabled" Type="Int32" />
+          <Property Name="mas_user_level" Type="Int32" />
+          <Property Name="mas_results_per_page" Type="Int32" />
+          <Property Name="dil_enabled" Type="Int32" />
+          <Property Name="dil_user_level" Type="Int32" />
+          <Property Name="dil_results_per_page" Type="Int32" />
+          <Property Name="dil_language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dil_permissions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="wcm_enabled" Type="Int32" />
+          <Property Name="wcm_user_level" Type="Int32" />
+          <Property Name="wcm_results_per_page" Type="Int32" />
+          <Property Name="wcm_editable_pages" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vcs_enabled" Type="Int32" />
+          <Property Name="vcs_user_level" Type="Int32" />
+          <Property Name="vcs_results_per_page" Type="Int32" />
+          <Property Name="tas_enabled" Type="Int32" />
+          <Property Name="tas_user_level" Type="Int32" />
+          <Property Name="tas_results_per_page" Type="Int32" />
+          <Property Name="oe_enabled" Type="Int32" />
+          <Property Name="ir_oe_user_level" Type="Int32" />
+          <Property Name="ir_oe_enabled" Type="Int32" />
+          <Property Name="ir_oe_results_per_page" Type="Int32" />
+          <Property Name="ppr_print" Type="Int32" />
+          <Property Name="ppr_level" Type="Int32" />
+          <Property Name="bdg_enabled" Type="Int32" />
+          <Property Name="bdg_user_level" Type="Int32" />
+          <Property Name="prop_enabled" Type="Int32" />
+          <Property Name="pcr_enabled" Type="Int32" />
+          <Property Name="evc_dep_enabled" Type="Int32" />
+          <Property Name="gir_enabled" Type="Int32" />
+          <Property Name="rhhe_comp_id" Type="Int32" />
+          <Property Name="rhhe_enabled" Type="Int32" />
+          <Property Name="rhhe_user_id" Type="Int32" />
+          <Property Name="isa_enabled" Type="Int32" />
+          <Property Name="isa_user_level" Type="Int32" />
+          <Property Name="isa_results_per_page" Type="Int32" />
+          <Property Name="isa_language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ecf_enabled" Type="Int32" />
+          <Property Name="ecf_user_level" Type="Int32" />
+          <Property Name="ecf_commisions" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VendorNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="villalist_enabled" Type="Int32" />
+          <Property Name="villalist_user_level" Type="Int32" />
+          <Property Name="rca_enabled" Type="Int32" />
+          <Property Name="rca_user_level" Type="Int32" />
+          <Property Name="rca_dep" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="hsk_app_enabled" Type="Int32" />
+          <Property Name="hsk_app_user_level" Type="Int32" />
+          <Property Name="prs_enabled" Type="Int32" />
+          <Property Name="prs_user_level" Type="Int32" />
+          <Property Name="cms_enabled" Type="Int32" />
+          <Property Name="cms_user_level" Type="Int32" />
+          <Property Name="addressbook" Type="Int32" />
+          <Property Name="login_date" Type="DateTime" Precision="3" />
+          <Property Name="login_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="insert_date" Type="DateTime" Precision="3" />
+          <Property Name="insert_author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="update_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="update_author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="vw_holiday_routings" Relationship="Self.FK_vw_holiday_routings_t__users" FromRole="t__users" ToRole="vw_holiday_routings" />
+          <NavigationProperty Name="vw_holiday_routings1" Relationship="Self.FK_vw_holiday_routings_t__users1" FromRole="t__users" ToRole="vw_holiday_routings" />          
+          <NavigationProperty Name="t__companies" Relationship="vdlwebcontrolModel.t__userst__companies" FromRole="t__users" ToRole="t__companies" />
+          <NavigationProperty Name="t__departments" Relationship="vdlwebcontrolModel.t__userst__departments" FromRole="t__users" ToRole="t__departments" />
+        </EntityType>
+        <EntityType Name="vw_holiday_routings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="person_in_charge_id" Type="Int32" />
+          <Property Name="mandatory" Type="Int32" />
+          <NavigationProperty Name="t__users" Relationship="Self.FK_vw_holiday_routings_t__users" FromRole="vw_holiday_routings" ToRole="t__users" />
+          <NavigationProperty Name="t__users1" Relationship="Self.FK_vw_holiday_routings_t__users1" FromRole="vw_holiday_routings" ToRole="t__users" />
+        </EntityType>
+        <Association Name="FK_vw_holiday_routings_t__users">
+          <End Role="t__users" Type="Self.t__users" Multiplicity="0..1" />
+          <End Role="vw_holiday_routings" Type="Self.vw_holiday_routings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="t__users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vw_holiday_routings">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vw_holiday_routings_t__users1">
+          <End Role="t__users" Type="Self.t__users" Multiplicity="0..1" />
+          <End Role="vw_holiday_routings" Type="Self.vw_holiday_routings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="t__users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vw_holiday_routings">
+              <PropertyRef Name="person_in_charge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="vdlwebcontrolEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="t__users" EntityType="Self.t__users" />
+          <EntitySet Name="vw_holiday_routings" EntityType="Self.vw_holiday_routings" />
+          <AssociationSet Name="FK_vw_holiday_routings_t__users" Association="Self.FK_vw_holiday_routings_t__users">
+            <End Role="t__users" EntitySet="t__users" />
+            <End Role="vw_holiday_routings" EntitySet="vw_holiday_routings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vw_holiday_routings_t__users1" Association="Self.FK_vw_holiday_routings_t__users1">
+            <End Role="t__users" EntitySet="t__users" />
+            <End Role="vw_holiday_routings" EntitySet="vw_holiday_routings" />
+          </AssociationSet>
+          <EntitySet Name="t__companies" EntityType="vdlwebcontrolModel.t__companies" />
+          <EntitySet Name="t__departments" EntityType="vdlwebcontrolModel.t__departments" />
+          <AssociationSet Name="t__userst__companies" Association="vdlwebcontrolModel.t__userst__companies">
+            <End Role="t__users" EntitySet="t__users" />
+            <End Role="t__companies" EntitySet="t__companies" />
+          </AssociationSet>
+          <AssociationSet Name="t__userst__departments" Association="vdlwebcontrolModel.t__userst__departments">
+            <End Role="t__users" EntitySet="t__users" />
+            <End Role="t__departments" EntitySet="t__departments" />
+          </AssociationSet>
+          <EntitySet Name="vl_HRC_HBC_ASSIGNED_HOLIDAYS" EntityType="vdlwebcontrolModel.vl_HRC_HBC_ASSIGNED_HOLIDAYS" />
+          <EntitySet Name="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING" EntityType="vdlwebcontrolModel.vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING" />
+        </EntityContainer>
+        <EntityType Name="t__companies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompDB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompPHC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompPC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompNAV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="queueNAV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pcs_enabled" Type="Int32" />
+          <Property Name="das_enabled" Type="Int32" />
+          <Property Name="hbc_enabled" Type="Int32" />
+          <Property Name="hbc_form_enabled" Type="Int32" />
+          <Property Name="mas_enabled" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="NIF" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Cod" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NAVComp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="t__departments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="department_pt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="department_en" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="department_de" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pcs_enabled" Type="Int32" />
+          <Property Name="das_enabled" Type="Int32" />
+          <Property Name="hbc_enabled" Type="Int32" />
+          <Property Name="insert_date" Type="DateTime" Precision="3" />
+          <Property Name="insert_author" Type="Int32" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="update_author" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="sort_order" Type="Int32" />
+          <Property Name="director_id" Type="Int32" />
+          <Property Name="director_cc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductFilter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="t__userst__companies">
+          <End Type="vdlwebcontrolModel.t__users" Role="t__users" Multiplicity="*" />
+          <End Type="vdlwebcontrolModel.t__companies" Role="t__companies" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="t__companies">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="t__users">
+              <PropertyRef Name="comp_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="t__userst__departments">
+          <End Type="vdlwebcontrolModel.t__users" Role="t__users" Multiplicity="*" />
+          <End Type="vdlwebcontrolModel.t__departments" Role="t__departments" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="t__departments">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="t__users">
+              <PropertyRef Name="dep_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vl_HRC_HBC_ASSIGNED_HOLIDAYS">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="year_related" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="year_related" Type="Int32" Nullable="false" />
+          <Property Name="total_days" Type="Double" />
+          <Property Name="bonus_days" Type="Double" />
+          <Property Name="weekends_allowed" Type="Int32" />
+          <Property Name="half_fridays" Type="Int32" />
+          <Property Name="first_year" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="person_in_charge_id" />
+          </Key>
+          <Property Name="user_id"  Type="Int32" Nullable="false" />
+          <Property Name="person_in_charge_id"  Type="Int32" Nullable="false" />
+          <Property Name="mandatory" Type="Int32" />       
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="vdlwebcontrolModelStoreContainer" CdmEntityContainer="vdlwebcontrolEntities3">
+          <EntitySetMapping Name="t__users">
+            <EntityTypeMapping TypeName="vdlwebcontrolModel.t__users">
+              <MappingFragment StoreEntitySet="t__users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_logon" ColumnName="user_logon" />
+                <ScalarProperty Name="user_pass" ColumnName="user_pass" />
+                <ScalarProperty Name="user_pass_temp" ColumnName="user_pass_temp" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_alias" ColumnName="user_alias" />
+                <ScalarProperty Name="user_alias_pt" ColumnName="user_alias_pt" />
+                <ScalarProperty Name="user_alias_en" ColumnName="user_alias_en" />
+                <ScalarProperty Name="user_alias_de" ColumnName="user_alias_de" />
+                <ScalarProperty Name="user_title_pt" ColumnName="user_title_pt" />
+                <ScalarProperty Name="user_title_en" ColumnName="user_title_en" />
+                <ScalarProperty Name="user_title_de" ColumnName="user_title_de" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_pc_name" ColumnName="user_pc_name" />
+                <ScalarProperty Name="user_phone_ext" ColumnName="user_phone_ext" />
+                <ScalarProperty Name="user_phone_1" ColumnName="user_phone_1" />
+                <ScalarProperty Name="user_phone_2" ColumnName="user_phone_2" />
+                <ScalarProperty Name="user_phone_3" ColumnName="user_phone_3" />
+                <ScalarProperty Name="user_phone_4" ColumnName="user_phone_4" />
+                <ScalarProperty Name="user_phone_5" ColumnName="user_phone_5" />
+                <ScalarProperty Name="user_lang" ColumnName="user_lang" />
+                <ScalarProperty Name="user_gender" ColumnName="user_gender" />
+                <ScalarProperty Name="dep_id" ColumnName="dep_id" />
+                <ScalarProperty Name="comp_id" ColumnName="comp_id" />
+                <ScalarProperty Name="toner_requests" ColumnName="toner_requests" />
+                <ScalarProperty Name="valor_hora" ColumnName="valor_hora" />
+                <ScalarProperty Name="valor_hora_custo" ColumnName="valor_hora_custo" />
+                <ScalarProperty Name="pcs_enabled" ColumnName="pcs_enabled" />
+                <ScalarProperty Name="pcs_user_level" ColumnName="pcs_user_level" />
+                <ScalarProperty Name="pcs_results_per_page" ColumnName="pcs_results_per_page" />
+                <ScalarProperty Name="hbc_enabled" ColumnName="hbc_enabled" />
+                <ScalarProperty Name="hbc_user_id" ColumnName="hbc_user_id" />
+                <ScalarProperty Name="hbc_user_level" ColumnName="hbc_user_level" />
+                <ScalarProperty Name="hbc_routing" ColumnName="hbc_routing" />
+                <ScalarProperty Name="hbc_check_users" ColumnName="hbc_check_users" />
+                <ScalarProperty Name="hbc_results_per_page" ColumnName="hbc_results_per_page" />
+                <ScalarProperty Name="mas_enabled" ColumnName="mas_enabled" />
+                <ScalarProperty Name="mas_user_level" ColumnName="mas_user_level" />
+                <ScalarProperty Name="mas_results_per_page" ColumnName="mas_results_per_page" />
+                <ScalarProperty Name="dil_enabled" ColumnName="dil_enabled" />
+                <ScalarProperty Name="dil_user_level" ColumnName="dil_user_level" />
+                <ScalarProperty Name="dil_results_per_page" ColumnName="dil_results_per_page" />
+                <ScalarProperty Name="dil_language" ColumnName="dil_language" />
+                <ScalarProperty Name="dil_permissions" ColumnName="dil_permissions" />
+                <ScalarProperty Name="wcm_enabled" ColumnName="wcm_enabled" />
+                <ScalarProperty Name="wcm_user_level" ColumnName="wcm_user_level" />
+                <ScalarProperty Name="wcm_results_per_page" ColumnName="wcm_results_per_page" />
+                <ScalarProperty Name="wcm_editable_pages" ColumnName="wcm_editable_pages" />
+                <ScalarProperty Name="vcs_enabled" ColumnName="vcs_enabled" />
+                <ScalarProperty Name="vcs_user_level" ColumnName="vcs_user_level" />
+                <ScalarProperty Name="vcs_results_per_page" ColumnName="vcs_results_per_page" />
+                <ScalarProperty Name="tas_enabled" ColumnName="tas_enabled" />
+                <ScalarProperty Name="tas_user_level" ColumnName="tas_user_level" />
+                <ScalarProperty Name="tas_results_per_page" ColumnName="tas_results_per_page" />
+                <ScalarProperty Name="oe_enabled" ColumnName="oe_enabled" />
+                <ScalarProperty Name="ir_oe_user_level" ColumnName="ir_oe_user_level" />
+                <ScalarProperty Name="ir_oe_enabled" ColumnName="ir_oe_enabled" />
+                <ScalarProperty Name="ir_oe_results_per_page" ColumnName="ir_oe_results_per_page" />
+                <ScalarProperty Name="ppr_print" ColumnName="ppr_print" />
+                <ScalarProperty Name="ppr_level" ColumnName="ppr_level" />
+                <ScalarProperty Name="bdg_enabled" ColumnName="bdg_enabled" />
+                <ScalarProperty Name="bdg_user_level" ColumnName="bdg_user_level" />
+                <ScalarProperty Name="prop_enabled" ColumnName="prop_enabled" />
+                <ScalarProperty Name="pcr_enabled" ColumnName="pcr_enabled" />
+                <ScalarProperty Name="evc_dep_enabled" ColumnName="evc_dep_enabled" />
+                <ScalarProperty Name="gir_enabled" ColumnName="gir_enabled" />
+                <ScalarProperty Name="rhhe_comp_id" ColumnName="rhhe_comp_id" />
+                <ScalarProperty Name="rhhe_enabled" ColumnName="rhhe_enabled" />
+                <ScalarProperty Name="rhhe_user_id" ColumnName="rhhe_user_id" />
+                <ScalarProperty Name="isa_enabled" ColumnName="isa_enabled" />
+                <ScalarProperty Name="isa_user_level" ColumnName="isa_user_level" />
+                <ScalarProperty Name="isa_results_per_page" ColumnName="isa_results_per_page" />
+                <ScalarProperty Name="isa_language" ColumnName="isa_language" />
+                <ScalarProperty Name="ecf_enabled" ColumnName="ecf_enabled" />
+                <ScalarProperty Name="ecf_user_level" ColumnName="ecf_user_level" />
+                <ScalarProperty Name="ecf_commisions" ColumnName="ecf_commisions" />
+                <ScalarProperty Name="VendorNo" ColumnName="VendorNo" />
+                <ScalarProperty Name="villalist_enabled" ColumnName="villalist_enabled" />
+                <ScalarProperty Name="villalist_user_level" ColumnName="villalist_user_level" />
+                <ScalarProperty Name="rca_enabled" ColumnName="rca_enabled" />
+                <ScalarProperty Name="rca_user_level" ColumnName="rca_user_level" />
+                <ScalarProperty Name="rca_dep" ColumnName="rca_dep" />
+                <ScalarProperty Name="hsk_app_enabled" ColumnName="hsk_app_enabled" />
+                <ScalarProperty Name="hsk_app_user_level" ColumnName="hsk_app_user_level" />
+                <ScalarProperty Name="prs_enabled" ColumnName="prs_enabled" />
+                <ScalarProperty Name="prs_user_level" ColumnName="prs_user_level" />
+                <ScalarProperty Name="cms_enabled" ColumnName="cms_enabled" />
+                <ScalarProperty Name="cms_user_level" ColumnName="cms_user_level" />
+                <ScalarProperty Name="addressbook" ColumnName="addressbook" />
+                <ScalarProperty Name="login_date" ColumnName="login_date" />
+                <ScalarProperty Name="login_ip" ColumnName="login_ip" />
+                <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+                <ScalarProperty Name="insert_author" ColumnName="insert_author" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="update_author" ColumnName="update_author" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_holiday_routings">
+            <EntityTypeMapping TypeName="vdlwebcontrolModel.vw_holiday_routings">
+              <MappingFragment StoreEntitySet="vw_holiday_routings">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="person_in_charge_id" ColumnName="person_in_charge_id" />
+                <ScalarProperty Name="mandatory" ColumnName="mandatory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t__companies">
+            <EntityTypeMapping TypeName="vdlwebcontrolModel.t__companies">
+              <MappingFragment StoreEntitySet="t__companies">
+                <ScalarProperty Name="NAVComp" ColumnName="NAVComp" />
+                <ScalarProperty Name="Cod" ColumnName="Cod" />
+                <ScalarProperty Name="NIF" ColumnName="NIF" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="mas_enabled" ColumnName="mas_enabled" />
+                <ScalarProperty Name="hbc_form_enabled" ColumnName="hbc_form_enabled" />
+                <ScalarProperty Name="hbc_enabled" ColumnName="hbc_enabled" />
+                <ScalarProperty Name="das_enabled" ColumnName="das_enabled" />
+                <ScalarProperty Name="pcs_enabled" ColumnName="pcs_enabled" />
+                <ScalarProperty Name="queueNAV" ColumnName="queueNAV" />
+                <ScalarProperty Name="CompNAV" ColumnName="CompNAV" />
+                <ScalarProperty Name="CompPC" ColumnName="CompPC" />
+                <ScalarProperty Name="CompPHC" ColumnName="CompPHC" />
+                <ScalarProperty Name="CompDB" ColumnName="CompDB" />
+                <ScalarProperty Name="CompDescription" ColumnName="CompDescription" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t__departments">
+            <EntityTypeMapping TypeName="vdlwebcontrolModel.t__departments">
+              <MappingFragment StoreEntitySet="t__departments">
+                <ScalarProperty Name="ProductFilter" ColumnName="ProductFilter" />
+                <ScalarProperty Name="director_cc" ColumnName="director_cc" />
+                <ScalarProperty Name="director_id" ColumnName="director_id" />
+                <ScalarProperty Name="sort_order" ColumnName="sort_order" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="update_author" ColumnName="update_author" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="insert_author" ColumnName="insert_author" />
+                <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+                <ScalarProperty Name="hbc_enabled" ColumnName="hbc_enabled" />
+                <ScalarProperty Name="das_enabled" ColumnName="das_enabled" />
+                <ScalarProperty Name="pcs_enabled" ColumnName="pcs_enabled" />
+                <ScalarProperty Name="department_de" ColumnName="department_de" />
+                <ScalarProperty Name="department_en" ColumnName="department_en" />
+                <ScalarProperty Name="department_pt" ColumnName="department_pt" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vl_HRC_HBC_ASSIGNED_HOLIDAYS">
+            <EntityTypeMapping TypeName="vdlwebcontrolModel.vl_HRC_HBC_ASSIGNED_HOLIDAYS">
+              <MappingFragment StoreEntitySet="vl_HRC_HBC_ASSIGNED_HOLIDAYS">
+                <ScalarProperty Name="first_year" ColumnName="first_year" />
+                <ScalarProperty Name="half_fridays" ColumnName="half_fridays" />
+                <ScalarProperty Name="weekends_allowed" ColumnName="weekends_allowed" />
+                <ScalarProperty Name="bonus_days" ColumnName="bonus_days" />
+                <ScalarProperty Name="total_days" ColumnName="total_days" />
+                <ScalarProperty Name="year_related" ColumnName="year_related" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING">
+            <EntityTypeMapping TypeName="vdlwebcontrolModel.vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING">
+              <MappingFragment StoreEntitySet="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="person_in_charge_id" ColumnName="person_in_charge_id" />
+                <ScalarProperty Name="mandatory" ColumnName="mandatory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

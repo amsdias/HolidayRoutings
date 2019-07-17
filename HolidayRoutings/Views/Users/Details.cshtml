@@ -1,0 +1,221 @@
+﻿@model HolidayRoutings.Models.UserDetailsViewModel
+
+@{
+    ViewBag.Title = "Detalhes de Utilizador";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <div class="p-3 mb-2 bg-dark text-white">
+        <h4>[@(Model.User.user_name)]</h4>
+    </div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User.user_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.user_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.user_alias_pt)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.User.user_alias_pt)*@
+            @Html.ActionLink(Model.User.user_alias_pt, "Edit", new { id = Model.User.id })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.user_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.user_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.user_phone_ext)
+        </dt>
+
+        <dd>
+            @Html.ActionLink(Model.User.user_phone_ext != null ? Model.User.user_phone_ext.ToString() : "N/A", "Edit", new { id = Model.User.id })            
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.t__companies.CompDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.t__companies.CompDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.t__departments.department_pt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.t__departments.department_pt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.status)
+        </dt>
+
+        @if (Model.User.status == 1)
+        {
+            <dd>Sim</dd>
+        }
+        else
+        {
+            <dd>Não</dd>
+        }
+
+        <!--<dd>
+            @Html.DisplayFor(model => model.User.status)
+        </dd>-->
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Voltar à Lista", "Index")
+</p>
+@*<a href="/Routings/Create/@Model.User.id" class="btn btn-primary">Adicionar Routing</a>
+    <br />*@
+<table class="table table-striped table-sm">
+    <caption style="caption-side: top;"><h3>Routings</h3></caption>
+    <thead class="thead-dark">
+        <tr>
+            <!--<th>
+                @Html.DisplayNameFor(model => model.routingsList[0].user_id)
+            </th>-->
+            <th>
+                @Html.DisplayNameFor(model => model.routingsList[0].person_in_charge_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.routingsList[0].mandatory)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model.routingsList)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.person_in_charge_name, "Edit", "Routings", new { user_id = item.user_id, person_in_charge_id = item.person_in_charge_id }, null)
+            </td>
+            @if (item.mandatory == 1)
+            {
+                <td>Sim</td>
+            }
+            else
+            {
+                <td>Não</td>
+            }
+            <td>
+                @Html.ActionLink("Apagar Routing", "Delete", "Routings", new { user_id = item.user_id, person_in_charge_id = item.person_in_charge_id }, null)
+            </td>
+        </tr>
+    }
+    <br />
+    @*@Html.ActionLink("Adicionar Routing", "Create", "Routings", new { id = Model.User.id }, null)    *@
+</table>
+<a href="../../Routings/Create/@Model.User.id" class="btn btn-primary btn-sm">Adicionar Routing</a>
+<br />
+<br />
+<hr />
+<br />
+
+<table class="table table-striped table-sm">
+    <caption style="caption-side: top;"><h3>Dias Atribuídos</h3></caption>
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.holidaysList[0].year_related)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.holidaysList[0].total_days)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.holidaysList[0].bonus_days)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.holidaysList[0].weekends_allowed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.holidaysList[0].half_fridays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.holidaysList[0].first_year)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model.holidaysList)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.year_related.ToString(), "Edit", "holidays", new { id = item.id, year = item.year_related, name = Model.User.user_name }, null)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.total_days)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.bonus_days)
+            </td>
+
+            @if (item.weekends_allowed == 1)
+            {
+                <td>Sim</td>
+            }
+            else
+            {
+                <td>Não</td>
+            }
+
+            @if (item.half_fridays == 1)
+            {
+                <td>Sim</td>
+            }
+            else
+            {
+                <td>Não</td>
+            }
+
+            @if (item.first_year == 1)
+            {
+                <td>Sim</td>
+            }
+            else
+            {
+                <td>Não</td>
+            }
+
+            @if (item.year_related >= DateTime.Now.Year)
+            {
+                <td>@Html.ActionLink("Apagar Ano", "Delete", "holidays", new { id = item.id, year = item.year_related, name = Model.User.user_name }, null)</td>
+            }
+            else
+            {
+                <td></td>
+            }
+        </tr>
+    }
+
+    @*@Html.ActionLink("Adicionar Ano", "Create", "holidays", new { id = Model.User.id }, null)*@
+</table>
+<a href="../../holidays/Create/@Model.User.id" class="btn btn-primary btn-sm">Novo Ano</a>
+<br />
+<br />

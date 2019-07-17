@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="vdlwebcontrolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="t__companies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompDB" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompPHC" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompPC" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompNAV" Type="nvarchar" MaxLength="100" />
+    <Property Name="queueNAV" Type="nvarchar" MaxLength="100" />
+    <Property Name="pcs_enabled" Type="int" />
+    <Property Name="das_enabled" Type="int" />
+    <Property Name="hbc_enabled" Type="int" />
+    <Property Name="hbc_form_enabled" Type="int" />
+    <Property Name="mas_enabled" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="NIF" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cod" Type="nvarchar" MaxLength="10" />
+    <Property Name="NAVComp" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="t__departments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="department_pt" Type="nvarchar" MaxLength="50" />
+    <Property Name="department_en" Type="nvarchar" MaxLength="50" />
+    <Property Name="department_de" Type="nvarchar" MaxLength="50" />
+    <Property Name="pcs_enabled" Type="int" />
+    <Property Name="das_enabled" Type="int" />
+    <Property Name="hbc_enabled" Type="int" />
+    <Property Name="insert_date" Type="datetime" />
+    <Property Name="insert_author" Type="int" />
+    <Property Name="update_date" Type="datetime" />
+    <Property Name="update_author" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="sort_order" Type="int" />
+    <Property Name="director_id" Type="int" />
+    <Property Name="director_cc" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductFilter" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="t__users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_logon" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_pass_temp" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_alias" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_alias_pt" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_alias_en" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_alias_de" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_title_pt" Type="nvarchar" MaxLength="100" />
+    <Property Name="user_title_en" Type="nvarchar" MaxLength="100" />
+    <Property Name="user_title_de" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_pc_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_phone_ext" Type="int" />
+    <Property Name="user_phone_1" Type="char" MaxLength="10" />
+    <Property Name="user_phone_2" Type="char" MaxLength="10" />
+    <Property Name="user_phone_3" Type="char" MaxLength="10" />
+    <Property Name="user_phone_4" Type="char" MaxLength="10" />
+    <Property Name="user_phone_5" Type="char" MaxLength="10" />
+    <Property Name="user_lang" Type="varchar" MaxLength="2" />
+    <Property Name="user_gender" Type="varchar" MaxLength="1" />
+    <Property Name="dep_id" Type="int" />
+    <Property Name="comp_id" Type="int" />
+    <Property Name="toner_requests" Type="int" />
+    <Property Name="valor_hora" Type="float" />
+    <Property Name="valor_hora_custo" Type="float" />
+    <Property Name="pcs_enabled" Type="int" />
+    <Property Name="pcs_user_level" Type="int" />
+    <Property Name="pcs_results_per_page" Type="int" />
+    <Property Name="hbc_enabled" Type="int" />
+    <Property Name="hbc_user_id" Type="int" />
+    <Property Name="hbc_user_level" Type="int" />
+    <Property Name="hbc_routing" Type="nvarchar" MaxLength="50" />
+    <Property Name="hbc_check_users" Type="nvarchar" MaxLength="50" />
+    <Property Name="hbc_results_per_page" Type="int" />
+    <Property Name="mas_enabled" Type="int" />
+    <Property Name="mas_user_level" Type="int" />
+    <Property Name="mas_results_per_page" Type="int" />
+    <Property Name="dil_enabled" Type="int" />
+    <Property Name="dil_user_level" Type="int" />
+    <Property Name="dil_results_per_page" Type="int" />
+    <Property Name="dil_language" Type="varchar" MaxLength="50" />
+    <Property Name="dil_permissions" Type="nvarchar" MaxLength="50" />
+    <Property Name="wcm_enabled" Type="int" />
+    <Property Name="wcm_user_level" Type="int" />
+    <Property Name="wcm_results_per_page" Type="int" />
+    <Property Name="wcm_editable_pages" Type="nvarchar" MaxLength="50" />
+    <Property Name="vcs_enabled" Type="int" />
+    <Property Name="vcs_user_level" Type="int" />
+    <Property Name="vcs_results_per_page" Type="int" />
+    <Property Name="tas_enabled" Type="int" />
+    <Property Name="tas_user_level" Type="int" />
+    <Property Name="tas_results_per_page" Type="int" />
+    <Property Name="oe_enabled" Type="int" />
+    <Property Name="ir_oe_user_level" Type="int" />
+    <Property Name="ir_oe_enabled" Type="int" />
+    <Property Name="ir_oe_results_per_page" Type="int" />
+    <Property Name="ppr_print" Type="int" />
+    <Property Name="ppr_level" Type="int" />
+    <Property Name="bdg_enabled" Type="int" />
+    <Property Name="bdg_user_level" Type="int" />
+    <Property Name="prop_enabled" Type="int" />
+    <Property Name="pcr_enabled" Type="int" />
+    <Property Name="evc_dep_enabled" Type="int" />
+    <Property Name="gir_enabled" Type="int" />
+    <Property Name="rhhe_comp_id" Type="int" />
+    <Property Name="rhhe_enabled" Type="int" />
+    <Property Name="rhhe_user_id" Type="int" />
+    <Property Name="isa_enabled" Type="int" />
+    <Property Name="isa_user_level" Type="int" />
+    <Property Name="isa_results_per_page" Type="int" />
+    <Property Name="isa_language" Type="varchar" MaxLength="50" />
+    <Property Name="ecf_enabled" Type="int" />
+    <Property Name="ecf_user_level" Type="int" />
+    <Property Name="ecf_commisions" Type="nvarchar" MaxLength="10" />
+    <Property Name="VendorNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="villalist_enabled" Type="int" />
+    <Property Name="villalist_user_level" Type="int" />
+    <Property Name="rca_enabled" Type="int" />
+    <Property Name="rca_user_level" Type="int" />
+    <Property Name="rca_dep" Type="nvarchar" MaxLength="20" />
+    <Property Name="hsk_app_enabled" Type="int" />
+    <Property Name="hsk_app_user_level" Type="int" />
+    <Property Name="prs_enabled" Type="int" />
+    <Property Name="prs_user_level" Type="int" />
+    <Property Name="cms_enabled" Type="int" />
+    <Property Name="cms_user_level" Type="int" />
+    <Property Name="addressbook" Type="int" />
+    <Property Name="login_date" Type="datetime" />
+    <Property Name="login_ip" Type="nvarchar" MaxLength="50" />
+    <Property Name="insert_date" Type="datetime" />
+    <Property Name="insert_author" Type="nvarchar" MaxLength="50" />
+    <Property Name="update_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="update_author" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="vl_HRC_HBC_ASSIGNED_HOLIDAYS">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="year_related" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="year_related" Type="int" Nullable="false" />
+    <Property Name="total_days" Type="float" />
+    <Property Name="bonus_days" Type="float" />
+    <Property Name="weekends_allowed" Type="int" />
+    <Property Name="half_fridays" Type="int" />
+    <Property Name="first_year" Type="int" />
+  </EntityType>
+  <EntityType Name="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="person_in_charge_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="person_in_charge_id" Type="int" Nullable="false" />
+    <Property Name="mandatory" Type="int" />
+  </EntityType>
+  <EntityType Name="vw_holiday_routings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="person_in_charge_id" Type="int" />
+    <Property Name="mandatory" Type="int" />
+  </EntityType>
+  <Association Name="FK_vw_holiday_routings_t__users">
+    <End Role="t__users" Type="Self.t__users" Multiplicity="0..1" />
+    <End Role="vw_holiday_routings" Type="Self.vw_holiday_routings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t__users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vw_holiday_routings">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vw_holiday_routings_t__users1">
+    <End Role="t__users" Type="Self.t__users" Multiplicity="0..1" />
+    <End Role="vw_holiday_routings" Type="Self.vw_holiday_routings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t__users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vw_holiday_routings">
+        <PropertyRef Name="person_in_charge_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="vdlwebcontrolModelStoreContainer">
+    <EntitySet Name="t__companies" EntityType="Self.t__companies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t__departments" EntityType="Self.t__departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t__users" EntityType="Self.t__users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vl_HRC_HBC_ASSIGNED_HOLIDAYS" EntityType="Self.vl_HRC_HBC_ASSIGNED_HOLIDAYS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vw_holiday_routings" EntityType="Self.vw_holiday_routings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING" EntityType="Self.vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_vw_holiday_routings_t__users" Association="Self.FK_vw_holiday_routings_t__users">
+      <End Role="t__users" EntitySet="t__users" />
+      <End Role="vw_holiday_routings" EntitySet="vw_holiday_routings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vw_holiday_routings_t__users1" Association="Self.FK_vw_holiday_routings_t__users1">
+      <End Role="t__users" EntitySet="t__users" />
+      <End Role="vw_holiday_routings" EntitySet="vw_holiday_routings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

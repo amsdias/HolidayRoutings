@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3f5ebcb956c44b299bcb17ee32e42538" Name="Diagram1" ZoomLevel="39">
+        <EntityTypeShape EntityType="vdlwebcontrolModel.t__users" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="vdlwebcontrolModel.vw_holiday_routings" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />        
+        <AssociationConnector Association="vdlwebcontrolModel.FK_vw_holiday_routings_t__users" ManuallyRouted="false" />
+        <AssociationConnector Association="vdlwebcontrolModel.FK_vw_holiday_routings_t__users1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="vdlwebcontrolModel.vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <AssociationConnector Association="vdlwebcontrolModel.FK_vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING_t__users" ManuallyRouted="false" />
+        <AssociationConnector Association="vdlwebcontrolModel.FK_vl_HRC_HBC_HOLIDAY_DEPARTMENT_ROUTING_t__users1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="vdlwebcontrolModel.t__companies" Width="1.5" PointX="4.375" PointY="5.625" />
+        <EntityTypeShape EntityType="vdlwebcontrolModel.t__departments" Width="1.5" PointX="9.25" PointY="13.875" />
+        <AssociationConnector Association="vdlwebcontrolModel.t__userst__companies" />
+        <AssociationConnector Association="vdlwebcontrolModel.t__userst__departments" />
+        <EntityTypeShape EntityType="vdlwebcontrolModel.vl_HRC_HBC_ASSIGNED_HOLIDAYS" Width="1.5" PointX="3.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

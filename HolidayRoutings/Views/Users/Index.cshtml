@@ -1,0 +1,49 @@
+﻿@model IEnumerable<HolidayRoutings.Models.t__users>
+
+@{
+    ViewBag.Title = "Lista de Colaboradores";
+}
+
+<h2>Lista de Colaboradores</h2>
+
+<form class="form-inline">
+    <label class="sr-only control-label col-md-2" for="inlineFormInputName2">Nome</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="searchString" name="searchString" placeholder="Nome">
+    <button type="submit" class="btn btn-primary mb-2">Busca</button>
+</form>
+<br />
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.user_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.user_alias_pt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.user_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.user_phone_ext)
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.user_name, "Details", new { id = item.id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_alias_pt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_phone_ext)
+            </td>
+        </tr>
+    }
+</table>

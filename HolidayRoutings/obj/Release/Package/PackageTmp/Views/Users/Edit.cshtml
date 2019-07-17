@@ -1,0 +1,264 @@
+﻿@model HolidayRoutings.Models.t__users
+
+@{
+    ViewBag.Title = "Editar Utilizador";
+}
+
+<h2>Editar</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <div class="p-3 mb-2 bg-dark text-white">
+        <h4>[@(Model.user_name)]</h4>
+    </div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.user_alias, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.user_alias, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.user_alias, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.user_alias_pt, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.user_alias_pt, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.user_alias_pt, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.user_alias_en, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.user_alias_en, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.user_alias_en, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @Html.HiddenFor(model => model.user_alias_de, new { htmlAttributes = new { @class = "form-control" } })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.user_title_pt, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.user_title_pt, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.user_title_pt, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.user_title_en, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.user_title_en, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.user_title_en, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.user_phone_ext, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.user_phone_ext, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.user_phone_ext, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @Html.HiddenFor(model => model.id)
+
+    @Html.HiddenFor(model => model.user_logon)
+
+    @Html.HiddenFor(model => model.user_pass)
+
+    @Html.HiddenFor(model => model.user_pass_temp)
+
+    @Html.HiddenFor(model => model.user_name)
+
+    @Html.HiddenFor(model => model.user_title_de)
+
+    @Html.HiddenFor(model => model.user_email)
+
+    @Html.HiddenFor(model => model.user_pc_name)
+
+    @Html.HiddenFor(model => model.user_phone_1)
+
+    @Html.HiddenFor(model => model.user_phone_2)
+
+    @Html.HiddenFor(model => model.user_phone_3)
+
+    @Html.HiddenFor(model => model.user_phone_4)
+
+    @Html.HiddenFor(model => model.user_phone_5)
+
+    @Html.HiddenFor(model => model.user_lang)
+
+    @Html.HiddenFor(model => model.user_gender)
+
+    @Html.HiddenFor(model => model.dep_id)
+
+    @Html.HiddenFor(model => model.comp_id)
+
+    @Html.HiddenFor(model => model.toner_requests)
+
+    @Html.HiddenFor(model => model.valor_hora)
+
+    @Html.HiddenFor(model => model.valor_hora_custo)
+
+    @Html.HiddenFor(model => model.pcs_enabled)
+
+    @Html.HiddenFor(model => model.pcs_user_level)
+
+    @Html.HiddenFor(model => model.pcs_results_per_page)
+
+    @Html.HiddenFor(model => model.hbc_enabled)
+
+    @Html.HiddenFor(model => model.hbc_user_id)
+
+    @Html.HiddenFor(model => model.hbc_user_level)
+
+    @Html.HiddenFor(model => model.hbc_routing)
+
+    @Html.HiddenFor(model => model.hbc_check_users)
+
+    @Html.HiddenFor(model => model.hbc_results_per_page)
+
+    @Html.HiddenFor(model => model.mas_enabled)
+
+    @Html.HiddenFor(model => model.mas_user_level)
+
+    @Html.HiddenFor(model => model.mas_results_per_page)
+
+    @Html.HiddenFor(model => model.dil_enabled)
+
+    @Html.HiddenFor(model => model.dil_user_level)
+
+    @Html.HiddenFor(model => model.dil_results_per_page)
+
+    @Html.HiddenFor(model => model.dil_language)
+
+    @Html.HiddenFor(model => model.dil_permissions)
+
+    @Html.HiddenFor(model => model.wcm_enabled)
+
+    @Html.HiddenFor(model => model.wcm_user_level)
+
+    @Html.HiddenFor(model => model.wcm_results_per_page)
+
+    @Html.HiddenFor(model => model.wcm_editable_pages)
+
+    @Html.HiddenFor(model => model.vcs_enabled)
+
+    @Html.HiddenFor(model => model.vcs_user_level)
+
+    @Html.HiddenFor(model => model.vcs_results_per_page)
+
+    @Html.HiddenFor(model => model.tas_enabled)
+
+    @Html.HiddenFor(model => model.tas_user_level)
+
+    @Html.HiddenFor(model => model.tas_results_per_page)
+
+    @Html.HiddenFor(model => model.oe_enabled)
+
+    @Html.HiddenFor(model => model.ir_oe_user_level)
+
+    @Html.HiddenFor(model => model.ir_oe_enabled)
+
+    @Html.HiddenFor(model => model.ir_oe_results_per_page)
+
+    @Html.HiddenFor(model => model.ppr_print)
+
+    @Html.HiddenFor(model => model.ppr_level)
+
+    @Html.HiddenFor(model => model.bdg_enabled)
+
+    @Html.HiddenFor(model => model.bdg_user_level)
+
+    @Html.HiddenFor(model => model.prop_enabled)
+
+    @Html.HiddenFor(model => model.pcr_enabled)
+
+    @Html.HiddenFor(model => model.evc_dep_enabled)
+
+    @Html.HiddenFor(model => model.gir_enabled)
+
+    @Html.HiddenFor(model => model.rhhe_comp_id)
+
+    @Html.HiddenFor(model => model.rhhe_enabled)
+
+    @Html.HiddenFor(model => model.rhhe_user_id)
+
+    @Html.HiddenFor(model => model.isa_enabled)
+
+    @Html.HiddenFor(model => model.isa_user_level)
+
+    @Html.HiddenFor(model => model.isa_results_per_page)
+
+    @Html.HiddenFor(model => model.isa_language)
+
+    @Html.HiddenFor(model => model.ecf_enabled)
+
+    @Html.HiddenFor(model => model.ecf_user_level)
+
+    @Html.HiddenFor(model => model.ecf_commisions)
+
+    @Html.HiddenFor(model => model.VendorNo)
+
+    @Html.HiddenFor(model => model.villalist_enabled)
+
+    @Html.HiddenFor(model => model.villalist_user_level)
+
+    @Html.HiddenFor(model => model.rca_enabled)
+
+    @Html.HiddenFor(model => model.rca_user_level)
+
+    @Html.HiddenFor(model => model.rca_dep)
+
+    @Html.HiddenFor(model => model.hsk_app_enabled)
+
+    @Html.HiddenFor(model => model.hsk_app_user_level)
+
+    @Html.HiddenFor(model => model.prs_enabled)
+
+    @Html.HiddenFor(model => model.prs_user_level)
+
+    @Html.HiddenFor(model => model.cms_enabled)
+
+    @Html.HiddenFor(model => model.cms_user_level)
+
+    @Html.HiddenFor(model => model.addressbook)
+
+    @Html.HiddenFor(model => model.login_date)
+
+    @Html.HiddenFor(model => model.login_ip)
+
+    @Html.HiddenFor(model => model.insert_date)
+
+    @Html.HiddenFor(model => model.insert_author)
+
+    @Html.HiddenFor(model => model.update_date)
+
+    @Html.HiddenFor(model => model.update_author)
+
+    @Html.HiddenFor(model => model.status)
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Gravar" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Details", new { id = Model.id })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
